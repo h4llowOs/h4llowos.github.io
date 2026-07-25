@@ -1,0 +1,36 @@
+{
+    "id": 4284013,
+    "name": "Nine Circles",
+    "author": "Zobros",
+    "tags": ["Long", "Wave", "Nerve Control", "Learny", "Chokepoints"],
+    "creators": [],
+    "verifier": "H4llow",
+    "verification": "https://www.youtube.com/watch?v=dOdPoU1ncOc",
+    "showcase": "https://www.youtube.com/watch?v=dOdPoU1ncOc",
+    "percentToQualify": 85,
+    "password": "Free to Copy",
+    "records": [
+        {
+            "user": "LoafOfBread",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false,
+            "link": "https://www.youtube.com/watch?v=dOdPoU1ncOc"
+        },
+         {
+            "user": "Goober",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false,
+            "link": "https://www.youtube.com/watch?v=dOdPoU1ncOc"
+        },
+        {
+            "user": "lilbinladn",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false,
+            "link": "https://www.youtube.com/watch?v=jx0FQUizSIw"
+        }
+        
+    ]
+}

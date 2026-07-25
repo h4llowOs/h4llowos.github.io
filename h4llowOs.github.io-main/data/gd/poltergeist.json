@@ -1,0 +1,28 @@
+{
+    "id": 7054561,
+    "name": "Poltergeist",
+    "author": "Andromeda GMD",
+    "tags": ["Long", "Wave", "Chokepoints", "Fast-Paced", "Timings"],
+    "creators": [],
+    "verifier": "H4llow",
+    "verification": "https://www.youtube.com/watch?v=87wNay4fS2Q",
+    "showcase": "https://www.youtube.com/watch?v=63sr55FXqsI",
+    "percentToQualify": 85,
+    "password": "Free to Copy",
+    "records": [
+        {
+            "user": "lilbinladn",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false,
+            "link": "https://www.youtube.com/watch?v=63sr55FXqsI"
+        },
+         {
+            "user": "LoafOfBread",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false,
+            "link": "https://www.youtube.com/watch?v=T10N3aKdukk"
+        }
+    ]
+}

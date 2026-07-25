@@ -1,0 +1,152 @@
+.page-leaderboard-container {
+    display: block;
+}
+.page-leaderboard {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(24rem, 2fr) 3fr;
+    grid-template-rows: max-content 1fr;
+    column-gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.page-leaderboard > div {
+    overflow-y: auto;
+}
+.page-leaderboard .error-container {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+}
+.page-leaderboard .error-container .error {
+    padding: 1rem;
+    background-color: var(--color-error);
+    color: var(--color-on-error);
+}
+.page-leaderboard .board-container,
+.page-leaderboard .player-container {
+    grid-row: 2;
+    padding-block: 2rem;
+}
+.page-leaderboard .board-container {
+    padding-inline: 1rem;
+}
+.page-leaderboard .board {
+    table-layout: auto;
+    display: block;
+    width: 100%;
+}
+.page-leaderboard .board .rank {
+    padding-block: 1rem;
+    text-align: end;
+}
+.page-leaderboard .board .total {
+    padding: 1rem;
+    text-align: end;
+}
+.page-leaderboard .board .user {
+    width: 100%;
+}
+.page-leaderboard .board .user button {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: start;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+/* ensure username and flag sit on one line */
+.page-leaderboard .board .user button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.page-leaderboard .board .user button:hover {
+    background-color: var(--color-background-hover);
+    color: var(--color-on-background-hover);
+    cursor: pointer;
+}
+.page-leaderboard .board .user.active button {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+.page-leaderboard .player {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+.page-leaderboard .player .table {
+    table-layout: fixed;
+}
+.page-leaderboard .player .table tr td:not(:last-child) {
+    padding-right: 2rem;
+}
+.page-leaderboard .player .table p,
+.page-leaderboard .player .table a {
+    padding-block: 1rem;
+}
+.page-leaderboard .player .table .rank p,
+.page-leaderboard .player .table .score p {
+    text-align: end;
+}
+.page-leaderboard .player .table .level {
+    width: 100%;
+}
+.page-leaderboard .player .table a:hover {
+    text-decoration: underline;
+}
+
+.leaderboard-switcher {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-inline: 1rem;
+}
+
+/* flag icons next to usernames */
+.flag-icon {
+    height: 0.72em; /* ~20% smaller than previous 0.9em */
+    width: auto;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+    border-radius: 2px;
+    display: inline-block;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.page-leaderboard .player h1 .flag-icon {
+    height: 0.92em; /* ~20% smaller than previous 1.15em */
+    margin-left: 0.45rem;
+}
+
+.leaderboard-switcher .switch-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-hover);
+    color: var(--color-on-background);
+    border: 1px solid var(--color-background-hover);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.leaderboard-switcher .switch-btn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.leaderboard-switcher .switch-btn:disabled {
+    background-color: #333333;
+    color: #777777;
+    border-color: #333333;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* im gay */

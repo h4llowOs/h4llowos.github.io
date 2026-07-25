@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nchgng Demon List</title>
+
+    <link rel="icon" href="list_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/typography.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages/home.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages/list.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages/leaderboard.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages/upcoming.css" />
+    <link rel="stylesheet" type="text/css" href="css/components/nav.css" />
+    <link rel="stylesheet" type="text/css" href="css/components/btn.css" />
+    <link rel="stylesheet" type="text/css" href="css/components/tabs.css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+    
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <header class="header">
+            <div class="header__content">
+                <div class="header__title">
+                    <h1 class="type-headline-md">Nchgng Demon List</h1>
+                </div>
+                <nav class="nav">
+                    <router-link class="nav__tab" to="/">
+                        <span class="type-label-lg">Home</span>
+                    </router-link>
+                    <router-link class="nav__tab" to="/gdlist">
+                        <span class="type-label-lg">List</span>
+                    </router-link>
+                    <router-link class="nav__tab" to="/etohlist">
+                        <span class="type-label-lg">Tower List</span>
+                    </router-link>
+                    <router-link class="nav__tab" to="/gdleaderboard">
+                        <span class="type-label-lg">Leaderboard</span>
+                    </router-link>
+                    <router-link class="nav__tab" to="/gdupcoming">
+                        <span class="type-label-lg">Upcoming</span>
+                    </router-link>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <router-view></router-view>
+        </main>
+
+    </div>
+</body>
+</html>
