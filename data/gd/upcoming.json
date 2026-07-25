@@ -1,0 +1,62 @@
+[
+    {
+        "rank": 1,
+        "level": "Congregation",
+        "creator": "Stormfly",
+        "player": "h4llow",
+        "points": 100,
+        "placement": "#251",
+        "progress": "67-100",
+        "verification": "https://www.youtube.com/watch?v=jpjl0PGjMF8"
+    },
+    {
+        "rank": 2,
+        "level": "Silentium Gradas",
+        "creator": "Stormfly",
+        "player": "LoafOfBread",
+        "points": 100,
+        "placement": "#695",
+        "progress": "40",
+        "verification": "https://www.youtube.com/watch?v=5QUVFfxR290"
+    },
+    {
+        "rank": 3,
+        "level": "Interstellar Entropy",
+        "creator": "LastPrismAlex",
+        "player": "lilbinladn",
+        "points": 80,
+        "placement": "#1192",
+        "progress": "58, 51-100",
+        "verification": "https://www.youtube.com/watch?v=t1b47IZ3Ng8"
+    },
+    {
+        "rank": 4,
+        "level": "Cataclysm",
+        "creator": "Gboy",
+        "player": "??",
+        "points": 70,
+        "placement": "#1356, ",
+        "progress": "??",
+        "verification": "https://www.youtube.com/watch?v=pkvupweIpPc"
+    },
+    {
+        "rank": 5,
+        "level": "Remlocked",
+        "creator": "DreamZoneGD",
+        "player": "lilbinladn",
+        "points": 60,
+        "placement": "NAED, 19.04 GDDL",
+        "progress": "89, 33-100",
+        "verification": "https://www.youtube.com/watch?v=hJqe10nkUtI"
+    },
+   {
+         "rank": 6,
+        "level": "Future Funk II",
+        "creator": "JonathanGD",
+        "player": "lilbinladn",
+        "points": 50,
+        "placement": "NAED, 17.80 GDDL",
+        "progress": "99",
+        "verification": "https://www.youtube.com/watch?v=r1I6cEwi4Us"
+   }
+]
