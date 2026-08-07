@@ -4,18 +4,18 @@
     "author": "Woogi1411",
     "tags": ["Long", "Ship", "Timings", "Chokepoints", "Overall"],
     "creators": [],
-    "verifier": "lilbinladn",
-    "verification": "https://youtu.be/rtp3ZE46ByM",
+    "verifier": "Goober",
+    "verification": "https://www.youtube.com/watch?v=hTX0Ch5bgMw",
     "showcase": "https://www.youtube.com/watch?v=hTX0Ch5bgMw",
     "percentToQualify": 85,
     "password": "Free to Copy",
     "records": [
          {
-            "user": "Goober",
+            "user": "lilbinladn",
             "percent": 100,
             "hz": 240,
             "mobile": false,
-            "link": "https://www.youtube.com/watch?v=hTX0Ch5bgMw"
+            "link": "https://youtu.be/rtp3ZE46ByM"
         }
     ]
 }
