@@ -1,0 +1,92 @@
+/* hi its le h4 i have had to rewrite this twice now and it did nothing fuck you tsl */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, ol, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote::before, blockquote::after, q::before, q::after {
+    content: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+img {
+    display: block;
+}
+
+input, button {
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, dl, dd {
+    margin: 0;
+    font-weight: normal;
+}
+
+iframe {
+    border: none;
+}
+
+.nav > a,
+.nav a:first-child,
+.nav h1 {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    word-break: keep-all !important;
+}
+
+.page-list .level-container .level .records {
+    table-layout: auto !important;
+    width: 100%;
+}
+
+.page-list .level-container .level .records tr td:not(:last-child) {
+    padding-right: 1.5rem; 
+}
+
+.page-list .level-container .level .records .percent {
+    text-align: end;
+    white-space: nowrap !important; 
+}
+
+.page-list .level-container .level .records .user {
+    width: 100%;
+}
+
+.page-list .level-container .level .records .hz {
+    text-align: end;
+}
+
+.page-list .level-container .level .records .percent,
+.page-list .level-container .level .records .user,
+.page-list .level-container .level .records .hz {
+    padding-block: 1rem;
+}

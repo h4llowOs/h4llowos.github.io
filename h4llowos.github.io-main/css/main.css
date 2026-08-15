@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500&display=swap');
+
+:root {
+    --color-background: #121316;
+    --color-on-background: #ffffff;
+    --color-primary: #344966;
+    --color-on-primary: #ffffff;
+    --tab-bg: rgba(255,255,255,0.08);
+    --tab-hover: rgba(255,255,255,0.14);
+    --tab-active: rgba(255,255,255,0.2);
+    --tab-border: rgba(255,255,255,0.18);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Lato', 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+/* Use a lighter, less-bold font on the home page */
+.home-container,
+.home-container * {
+    font-family: 'Lato', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.home-container h1,
+.home-container h2,
+.home-container h3 {
+    font-weight: 500 !important;
+}
+
+header {
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-inline: 2rem;
+    background: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+header .nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+header .nav a {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-on-primary);
+    font-size: 1rem;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    opacity: 0.7;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+header .nav a:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+header .nav a.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+#app > .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: max-content minmax(16rem, 2fr) minmax(16rem, 1fr);
+    column-gap: 2rem;
+    min-height: 0;
+    background: var(--color-background);
+    color: var(--color-on-background);
+}
+
+#app > .main > div {
+    overflow-y: auto;
+}
+
+#app > .main:has(.home-container) {
+    display: block !important;
+    height: auto !important;
+}
+
+input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+@media (min-width: 1366px) {
+    header {
+        padding-inline: 5rem;
+    }
+}
