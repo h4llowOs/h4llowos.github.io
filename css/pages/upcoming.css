@@ -470,7 +470,7 @@
     text-decoration: underline;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
     .page-upcoming,
     .page-upcoming.full-right {
         display: block;

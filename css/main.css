@@ -125,8 +125,8 @@ input[type="checkbox"] {
     }
 }
 
-/* fix for mobile */
-@media (max-width: 800px) {
+/* Mobile layout: desktop rules above remain unchanged. */
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
     html, body {
         height: auto;
         min-height: 100%;

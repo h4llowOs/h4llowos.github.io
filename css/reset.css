@@ -1,5 +1,4 @@
 /* hi its le h4 i have had to rewrite this twice now and it did nothing fuck you tsl */
-/* update: loaf here, fuck you tsl i had to learn some css from the ground up to fix the mobile ui */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -92,8 +91,8 @@ iframe {
     padding-block: 1rem;
 }
 
-/* fix for mobile*/
-@media (max-width: 800px) {
+/* Mobile-safe global reset additions. */
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
     html, body {
         width: 100%;
         max-width: 100%;

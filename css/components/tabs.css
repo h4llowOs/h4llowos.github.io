@@ -28,7 +28,7 @@
 .tabs .tab:hover{
     background-color: var(--color-background-hover);
 }
-@media (max-width: 800px) {
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
     .tabs {
         width: 100%;
         max-width: 100%;

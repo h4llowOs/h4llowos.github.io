@@ -12,7 +12,8 @@
   min-height: 100vh;
 }
 
-/* i made this a few dyas go for mobile and i have no idea what it does now */
+/* When the page-list requests the full-right layout, make it span
+   the site's main grid center+right columns and use a two-column layout */
 main > .page-list.full-right {
   grid-column: 2 / 4;
   display: grid;
@@ -592,7 +593,7 @@ main > .page-list.full-right {
   text-decoration: underline;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
   .page-list,
   .page-list.full-right {
     display: block;
@@ -714,5 +715,79 @@ main > .page-list.full-right {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+/* Strong mobile overrides for the full-right list layout.
+   These intentionally match/exceed the desktop selectors' specificity so
+   Chrome Android (including "Desktop site") cannot keep the 3-column grid. */
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
+  main > .page-list.full-right {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    grid-column: 1 / -1 !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .page-list.full-right .list-container,
+  .page-list.full-right .level-container,
+  .page-list.full-right .meta-container,
+  .page-list.full-right .meta-container.meta-hidden {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .page-list.full-right .list-container {
+    max-height: 48vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .page-list.full-right .card-thumbnail {
+    width: 120px !important;
+    height: 68px !important;
+  }
+
+  .page-list.full-right .level-container .level,
+  .page-list.full-right .level-container .level .video,
+  .page-list.full-right .level-container .level iframe,
+  .page-list.full-right .level-container .level video,
+  .page-list.full-right .level-container .level .level-authors,
+  .page-list.full-right .level-container .level .stats {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-list.full-right .level-container .level .video,
+  .page-list.full-right .level-container .level iframe,
+  .page-list.full-right .level-container .level video {
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+  }
+
+  .page-list.full-right .meta-container {
+    padding: 1rem 0.85rem !important;
+  }
+
+  .page-list.full-right .meta .rules-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-list.full-right .meta .rules-panel .rules-content {
+    max-height: none !important;
+    overflow-y: visible !important;
   }
 }

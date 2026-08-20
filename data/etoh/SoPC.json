@@ -5,6 +5,11 @@
     "area": "The Eternal Abyss",
     "verifier": "squished",
     "showcase": "https://youtu.be/Xx64th02mT4",
+<<<<<<< HEAD
+    "records": [ {
+        "user": "squished" 
+    }
+=======
     "records": [
         {
             "user": "lilbinladn"
@@ -12,5 +17,6 @@
         {
             "user": "malikoonium"
         }
+>>>>>>> 1f57b9a (swap helios, violetwall. add squished stuff)
     ] 
 }

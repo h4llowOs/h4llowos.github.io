@@ -228,8 +228,8 @@ p::after,
     display: table;
 }
 
-/*fix scale for mobile*/
-@media (max-width: 800px) {
+/* Scale headings and body text for narrow screens. */
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
     h1, .type-h1, .type-headline-lg {
         font-size: 2rem;
         line-height: 2.25rem;
