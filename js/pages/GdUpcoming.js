@@ -1,5 +1,5 @@
 import { embed } from "../util.js";
-import { fetchList } from "../gd_content.js";
+import { fetchUpcoming } from "../gd_content.js";
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
 
@@ -245,7 +245,7 @@ export default {
     },
 
     async mounted() {
-        const result = await fetchList();
+        const result = await fetchUpcoming();
 
         if (Array.isArray(result)) {
             this.list = result
