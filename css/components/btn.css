@@ -19,3 +19,11 @@
 .btn:not(:disabled):hover:not(:active) {
     transform: translateY(-2px);
 }
+
+@media (max-width: 800px) {
+    .btn {
+        min-height: 2.75rem;
+        padding: 0.8rem 1rem;
+        touch-action: manipulation;
+    }
+}

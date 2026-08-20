@@ -52,3 +52,35 @@
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);
 }
+
+@media (max-width: 800px) {
+    .nav {
+        width: 100%;
+        max-width: 100%;
+        column-gap: 0.25rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav .nav__tab {
+        flex: 0 0 auto;
+        padding-inline: 0.75rem;
+        min-height: 2.75rem;
+    }
+
+    .nav .nav__actions {
+        flex: 0 0 auto;
+    }
+
+    .nav .nav__actions .nav__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .nav .nav__actions .nav__cta {
+        margin-left: 0.35rem;
+        padding: 0.7rem 0.85rem;
+        white-space: nowrap;
+    }
+}

@@ -1,4 +1,5 @@
 /* hi its le h4 i have had to rewrite this twice now and it did nothing fuck you tsl */
+/* update: loaf here, fuck you tsl i had to learn some css from the ground up to fix the mobile ui */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -89,4 +90,31 @@ iframe {
 .page-list .level-container .level .records .user,
 .page-list .level-container .level .records .hz {
     padding-block: 1rem;
+}
+
+/* fix for mobile*/
+@media (max-width: 800px) {
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img, video, iframe, canvas, svg {
+        max-width: 100%;
+    }
+
+    table {
+        max-width: 100%;
+    }
+
+    .nav > a,
+    .nav a:first-child,
+    .nav h1 {
+        flex-shrink: 0 !important;
+    }
+
+    .page-list .level-container .level .records tr td:not(:last-child) {
+        padding-right: 0.6rem;
+    }
 }

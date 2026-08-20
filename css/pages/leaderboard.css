@@ -150,3 +150,65 @@
 }
 
 /* im gay */
+
+@media (max-width: 800px) {
+    .page-leaderboard-container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .page-leaderboard {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        padding: 0 0.75rem 1.5rem;
+    }
+
+    .page-leaderboard > div {
+        overflow-y: visible;
+    }
+
+    .page-leaderboard .error-container,
+    .page-leaderboard .board-container,
+    .page-leaderboard .player-container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .page-leaderboard .board-container,
+    .page-leaderboard .player-container {
+        padding-block: 1rem;
+    }
+
+    .page-leaderboard .board-container {
+        padding-inline: 0;
+        overflow-x: auto;
+    }
+
+    .page-leaderboard .player {
+        padding-right: 0;
+        gap: 1rem;
+    }
+
+    .page-leaderboard .player .table {
+        width: 100%;
+        table-layout: auto;
+    }
+
+    .page-leaderboard .player .table tr td:not(:last-child) {
+        padding-right: 0.75rem;
+    }
+
+    .leaderboard-switcher {
+        margin-top: 1rem;
+        padding-inline: 0.75rem;
+        gap: 0.5rem;
+        overflow-x: auto;
+    }
+
+    .leaderboard-switcher .switch-btn {
+        flex: 0 0 auto;
+        padding: 0.7rem 1rem;
+    }
+}

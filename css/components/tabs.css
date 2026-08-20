@@ -28,3 +28,18 @@
 .tabs .tab:hover{
     background-color: var(--color-background-hover);
 }
+@media (max-width: 800px) {
+    .tabs {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs .tab {
+        flex: 0 0 auto;
+        padding: 0.8rem 0.9rem;
+        white-space: nowrap;
+    }
+}

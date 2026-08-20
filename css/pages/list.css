@@ -12,8 +12,7 @@
   min-height: 100vh;
 }
 
-/* When the page-list requests the full-right layout, make it span
-   the site's main grid center+right columns and use a two-column layout */
+/* i made this a few dyas go for mobile and i have no idea what it does now */
 main > .page-list.full-right {
   grid-column: 2 / 4;
   display: grid;
@@ -591,4 +590,129 @@ main > .page-list.full-right {
 
 .page-list .meta .editors li a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .page-list,
+  .page-list.full-right {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .page-list.full-right {
+    grid-template-columns: none;
+  }
+
+  .page-list .list-container,
+  .page-list .level-container,
+  .page-list .meta-container,
+  .page-list .meta-container.meta-hidden {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .page-list .list-container,
+  .page-list .level-container,
+  .page-list .meta-container {
+    padding-block: 1rem;
+    padding-inline: 0.85rem;
+  }
+
+  .page-list .list-cards {
+    gap: 0.75rem;
+  }
+
+  .page-list .level-card {
+    gap: 0.8rem;
+    padding: 0.9rem;
+    border-radius: 0.8rem;
+  }
+
+  .page-list .card-rank {
+    min-width: 2rem;
+    font-size: 1.15rem;
+  }
+
+  .page-list .card-main-content {
+    gap: 0.8rem;
+  }
+
+  .page-list .card-thumbnail {
+    width: 120px;
+    height: 68px;
+  }
+
+  .page-list .card-info {
+    min-width: 0;
+  }
+
+  .page-list .card-title,
+  .page-list .card-author,
+  .page-list .card-verifier,
+  .page-list .card-points {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .page-list .level-container .level {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+    gap: 1.25rem;
+  }
+
+  .page-list .level h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .page-list .level h2 {
+    font-size: 1.4rem;
+  }
+
+  .page-list .meta-container {
+    position: static;
+    padding-right: 0.85rem;
+  }
+
+  .page-list .meta-container.meta-hidden {
+    padding-inline: 0.85rem;
+  }
+
+  .page-list .meta-toggle,
+  .page-list .meta-container.meta-hidden .meta-toggle {
+    position: static;
+    width: auto;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-list .meta,
+  .page-list .level-info,
+  .page-list .level-video,
+  .page-list iframe,
+  .page-list video {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .page-list .level-info {
+    grid-template-columns: 1fr;
+  }
+
+  .page-list table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-list .records {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

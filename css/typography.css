@@ -227,3 +227,35 @@ p::after,
     margin-top: -0.4416666667em;
     display: table;
 }
+
+/*fix scale for mobile*/
+@media (max-width: 800px) {
+    h1, .type-h1, .type-headline-lg {
+        font-size: 2rem;
+        line-height: 2.25rem;
+        letter-spacing: -1px;
+    }
+
+    h2, .type-h2, .type-headline-md {
+        font-size: 1.65rem;
+        line-height: 2rem;
+    }
+
+    h3, .type-h3, .type-headline-sm,
+    h4, .type-h4, .type-title-lg {
+        font-size: 1.3rem;
+        line-height: 1.65rem;
+    }
+
+    h5, .type-h5, .type-title-md {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+
+    h6, dt, .type-h6, .type-title-sm,
+    label, input[type="text"], input[type="number"], .type-label-lg,
+    p, .type-body {
+        font-size: 1rem;
+        line-height: 1.55rem;
+    }
+}

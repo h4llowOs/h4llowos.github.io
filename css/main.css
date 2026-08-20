@@ -124,3 +124,63 @@ input[type="checkbox"] {
         padding-inline: 5rem;
     }
 }
+
+/* fix for mobile */
+@media (max-width: 800px) {
+    html, body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        min-width: 0;
+    }
+
+    header {
+        height: auto;
+        min-height: 4.5rem;
+        padding: 0.65rem 0.75rem;
+        gap: 0.65rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    header .logo {
+        justify-content: center;
+        min-height: 2rem;
+    }
+
+    header .nav {
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+    }
+
+    header .nav a {
+        flex: 0 0 auto;
+        min-height: 2.75rem;
+        padding-inline: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    #app > .main {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+    }
+
+    #app > .main > div {
+        width: 100%;
+        min-width: 0;
+        overflow-y: visible;
+    }
+
+    input, select, textarea, button {
+        max-width: 100%;
+    }
+}

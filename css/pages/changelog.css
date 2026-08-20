@@ -127,3 +127,35 @@
 .change-item.neutral::before {
   color: #8190ab;
 }
+
+@media (max-width: 800px) {
+    .page-changelog {
+        width: 100%;
+        padding: 1.25rem 1rem 2rem;
+    }
+
+    .changelog-header h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .day-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .day-meta {
+        font-size: 0.9rem;
+    }
+
+    .change-list {
+        padding-inline: 0;
+    }
+
+    .change-item {
+        gap: 0.45rem;
+        padding: 0.5rem 0.35rem;
+        font-size: 0.95rem;
+        overflow-wrap: anywhere;
+    }
+}
