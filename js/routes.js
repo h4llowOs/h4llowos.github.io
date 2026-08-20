@@ -8,10 +8,17 @@ import Changelog from './pages/Changelog.js';
 
 export default [
     { path: '/', component: Home },
-    { path: '/gdlist', component: GdList },
-    { path: '/etohlist', component: EtohList },
-    { path: '/gdleaderboard', component: GdLeaderboard },
-    { path: '/etohleaderboard', component: EtohLeaderboard },
+
+    // this is for the lists
+    { path: '/gdlist/:level', component: GdList },
+    { path: '/etohlist/:level', component: EtohList },
+// lb
+    { path: '/gdleaderboard/:username', component: GdLeaderboard },
+    { path: '/etohleaderboard/:username', component: EtohLeaderboard },
+
+    // other pages
     { path: '/gdupcoming', component: GdUpcoming },
     { path: '/changelog', component: Changelog },
 ];
+
+// i redid routes its waay more organized now and allows for some specialized routing - h4
