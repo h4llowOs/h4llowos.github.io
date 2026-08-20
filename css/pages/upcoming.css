@@ -1,586 +1,793 @@
-.page-upcoming, .page-upcoming * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+.page-list, .page-list * {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.page-list {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* When the page-list requests the full-right layout, make it span
+   the site's main grid center+right columns and use a two-column layout */
+main > .page-list.full-right {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: minmax(300px, 500px) 1fr minmax(260px, 360px);
+  column-gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+.page-list .list-container,
+.page-list .level-container,
+.page-list .meta-container {
+  padding-block: 2.5rem;
+}
+
+.page-list .list-container {
+  padding-inline: 1rem;
+  min-width: 340px;
+  max-width: 460px;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.page-list .list-search {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.page-list .list-container::-webkit-scrollbar {
+  width: 6px;
 }
 
-.page-upcoming {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
+.page-list .list-container::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.page-upcoming .list-container, 
-.page-upcoming .level-container, 
-.page-upcoming .meta-container {
-    padding-block: 2.5rem;
+.page-list .list-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
-.page-upcoming .list-container {
-    padding-inline: 1.5rem;
-    min-width: 520px;
-    max-width: 580px;
-    width: 100%;
-    max-height: 100vh;
-    overflow-y: auto;
+.page-list .list-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.page-upcoming .list-container::-webkit-scrollbar {
-    width: 6px;
+.page-list .list-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.page-upcoming .list-container::-webkit-scrollbar-track {
-    background: transparent;
+.page-list .level-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
+  user-select: none;
 }
 
-.page-upcoming .list-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.page-list .level-card:hover {
+  background-color: var(--color-background-hover);
+  color: var(--color-on-background-hover);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-.page-upcoming .list-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+.page-list .level-card.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-.page-upcoming .list-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.page-list .level-card.error {
+  color: var(--color-error);
+  cursor: not-allowed;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.page-list .card-rank {
+  font-weight: 800;
+  font-size: 1.4rem;
+  min-width: 3rem;
+  margin-top: 0.25rem;
+  opacity: 0.95;
 }
 
-.page-upcoming .level-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-    border-radius: 1rem;
-    padding: 1.25rem;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
-    user-select: none;
+.page-list .card-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
-.page-upcoming .level-card:hover {
-    background-color: var(--color-background-hover);
-    color: var(--color-on-background-hover);
-    border-color: rgba(255, 255, 255, 0.08);
+.page-list .card-main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-.page-upcoming .level-card.active {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    border-color: transparent;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+.page-list .card-thumbnail {
+  width: 240px;
+  height: 136px;
+  background-color: #050505;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
 }
 
-.page-upcoming .level-card.error {
-    color: var(--color-error);
-    cursor: not-allowed;
-    text-decoration: line-through;
-    opacity: 0.6;
+.page-list .card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.page-upcoming .card-rank {
-    font-weight: 900;
-    font-size: 1.5rem;
-    min-width: 3rem;
-    margin-top: 0.25rem;
-    opacity: 0.9;
+.page-list .thumb-error {
+  color: #fff;
+  font-size: 0.8rem;
+  opacity: 0.5;
 }
 
-.page-upcoming .card-body-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    flex-grow: 1;
-    overflow: hidden;
+.page-list .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow: hidden;
+  min-width: 140px;
+  flex-grow: 1;
 }
 
-.page-upcoming .card-main-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    flex-wrap: wrap;
+.page-list .card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: normal;
+  overflow: visible;
+  letter-spacing: -0.01em;
 }
 
-.page-upcoming .card-thumbnail {
-    width: 210px;
-    height: 118px;
-    background-color: #050505;
-    border-radius: 0.65rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.page-list .card-author,
+.page-list .card-verifier,
+.page-list .card-points {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
 }
 
-.page-upcoming .card-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.page-list .card-points {
+  font-weight: 600;
+  opacity: 1;
 }
 
-.page-upcoming .thumb-error {
-    color: #fff;
-    font-size: 0.8rem;
-    opacity: 0.5;
+.page-list .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  width: 100%;
 }
 
-.page-upcoming .card-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    overflow: hidden;
-    min-width: 140px;
-    flex-grow: 1;
+.page-list .tag-badge {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.02em;
 }
 
-.page-upcoming .card-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 800;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    letter-spacing: -0.02em;
+.page-list .level-card.active .tag-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-.page-upcoming .card-author, 
-.page-upcoming .card-verifier, 
-.page-upcoming .card-points {
-    margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.page-list .level-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow-y: auto;
+  width: 100%;
 }
 
-.page-upcoming .card-points {
-    font-weight: 700;
-    opacity: 1;
+.page-list .level-container::-webkit-scrollbar {
+  width: 6px;
 }
 
-.page-upcoming .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    width: 100%;
+.page-list .level-container::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.page-upcoming .tag-badge {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: inherit;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.65rem;
-    border-radius: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    letter-spacing: 0.02em;
+.page-list .level-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
-.page-upcoming .level-card.active .tag-badge {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
+.page-list .level-container .level {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 1rem;
+  width: 100%;
+  max-width: none;
 }
 
-.page-upcoming .level-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    max-height: 100vh;
-    overflow-y: auto;
+.page-list .level h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.15;
 }
 
-.page-upcoming .level-container::-webkit-scrollbar {
-    width: 6px;
+.page-list .level h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
 }
 
-.page-upcoming .level-container::-webkit-scrollbar-track {
-    background: transparent;
+.page-list .meta-container {
+  position: relative;
+  padding-right: 2rem;
+  transition: min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+  min-width: 220px;
+  max-width: 360px;
+  width: 100%;
+  max-height: none;
+  overflow: visible;
 }
 
-.page-upcoming .level-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.page-list .meta-container::-webkit-scrollbar {
+  width: 6px;
 }
 
-.page-upcoming .level-container .level {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    padding-inline: 2rem;
-    width: 100%;
-    max-width: 52rem;
+.page-list .meta-container::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.page-upcoming .level h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    margin: 0;
+.page-list .meta-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
-.page-upcoming .level h2 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
+.page-list .meta-container.meta-hidden {
+  min-width: 45px;
+  max-width: 45px;
+  padding-inline: 0;
+  padding-right: 0;
+  overflow: hidden;
 }
 
-.page-upcoming .meta-container {
-    position: relative;
-    padding-right: 2rem;
-    transition: min-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
-    min-width: 320px;
-    max-width: 360px;
-    width: 100%;
-    max-height: 100vh;
-    overflow-y: auto;
+.page-list .meta-container.meta-hidden .meta {
+  display: none;
 }
 
-.page-upcoming .meta-container::-webkit-scrollbar {
-    width: 6px;
+.page-list .meta-toggle-btn {
+  position: absolute;
+  top: 2.5rem;
+  left: -20px;
+  z-index: 9999;
+  background-color: var(--color-background, #ffffff);
+  color: var(--color-on-background, #000000);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.page-upcoming .meta-container::-webkit-scrollbar-track {
-    background: transparent;
+.page-list .meta-toggle-btn:hover {
+  background-color: var(--color-background-hover);
+  color: var(--color-on-background-hover);
 }
+
+.page-list .meta-toggle-btn:active {
+  transform: scale(0.92);
+}
+
+.page-list .level-container .level .level-authors {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-auto-rows: max-content;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem 1.25rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  min-height: 104px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
 
-.page-upcoming .meta-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.page-list .level-container .level .video {
+  aspect-ratio: 16/9;
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.36);
+  background-color: #000;
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100vh - 120px);
 }
 
-.page-upcoming .meta-container.meta-hidden {
-    min-width: 45px;
-    max-width: 45px;
-    padding-inline: 0;
-    padding-right: 0;
-    overflow: hidden;
+/* When the full-right modifier is present, make the left list narrower and right column wider */
+.page-list.full-right .list-container {
+  min-width: 260px;
+  max-width: 380px;
 }
 
-.page-upcoming .meta-container.meta-hidden .meta {
-    display: none;
+.page-list.full-right .card-thumbnail {
+  width: 240px;
+  height: 136px;
 }
 
-.page-upcoming .meta-toggle-btn {
-    position: absolute;
-    top: 2.5rem;
-    left: -20px;
-    z-index: 9999;
-    background-color: var(--color-background, #ffffff);
-    color: var(--color-on-background, #000000);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 0.85rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.2s ease, transform 0.1s ease;
+.page-list .level-container .level .stats {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem 1.25rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  min-height: 84px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.page-upcoming .meta-toggle-btn:hover {
-    background-color: var(--color-background-hover);
-    color: var(--color-on-background-hover);
+/* match top/bottom bubbles to video width */
+.page-list .level-container .level .level-authors,
+.page-list .level-container .level .stats {
+  max-width: 840px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-block: 1rem;
+  overflow: hidden;
 }
 
-.page-upcoming .meta-toggle-btn:active {
-    transform: scale(0.92);
+.page-list .level-container .level .level-authors,
+.page-list .level-container .level .stats,
+.page-list .level-container .level .video {
+  margin-inline-start: 0;
 }
 
-.page-upcoming .level-container .level .level-authors {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-auto-rows: max-content;
-    gap: 1.25rem;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 1.25rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+/* rules panel styling inside the meta column */
+.page-list .meta .rules-panel {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  max-height: 840px;
+  overflow: visible; /* container should not scroll */
+  display: flex;
+  flex-direction: column;
+}
+.page-list .meta .rules-panel h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
 }
 
-.page-upcoming .level-container .level .video {
-    aspect-ratio: 16/9;
-    border-radius: 1rem;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-    background-color: #000;
+.page-list .meta .rules-panel .rules-content {
+  width: 100%;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-y: auto; /* only inner text scrolls */
+  padding-right: 6px;
+  flex: 1 1 auto;
+  min-height: 0; /* allow flex child to shrink and enable scrolling */
+  box-sizing: border-box;
 }
+.page-list .meta .rules-panel .rules-content strong {
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 6px;
+}
 
-.page-upcoming .level-container .level .stats {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    gap: 1.5rem;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+/* sleek scrollbar for rules content (WebKit) */
+.page-list .meta .rules-panel .rules-content::-webkit-scrollbar {
+  width: 8px;
+}
+.page-list .meta .rules-panel .rules-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.page-list .meta .rules-panel .rules-content::-webkit-scrollbar-thumb {
+  background: rgba(200,200,200,0.28);
+  border-radius: 10px;
+}
+.page-list .meta .rules-panel .rules-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(200,200,200,0.4);
+}
+/* Firefox */
+.page-list .meta .rules-panel .rules-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200,200,200,0.28) transparent;
+}
+.page-list .meta-container {
+  align-self: start;
 }
 
-.page-upcoming .level-container .level .stats li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+.page-list .level-container .level .stats li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.page-upcoming .level-container .level .stats p {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin: 0;
-    letter-spacing: -0.01em;
+.page-list .level-container .level .stats p {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
-.page-upcoming .level-container .level .records {
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 0 0.5rem;
+.page-list .level-container .level .records {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
 }
 
-.page-upcoming .level-container .level .records tr {
-    background: rgba(255, 255, 255, 0.01);
-    transition: background 0.2s ease;
+.page-list .level-container .level .records tr {
+  background: rgba(255, 255, 255, 0.01);
+  transition: background 0.2s ease;
 }
 
-.page-upcoming .level-container .level .records tr:hover {
-    background: rgba(255, 255, 255, 0.03);
+.page-list .level-container .level .records tr:hover {
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.page-upcoming .level-container .level .records td {
-    padding: 1rem;
+.page-list .level-container .level .records td {
+  padding: 1rem;
 }
 
-.page-upcoming .level-container .level .records td:first-child {
-    border-top-left-radius: 0.75rem;
-    border-bottom-left-radius: 0.75rem;
-    padding-left: 1.25rem;
+.page-list .level-container .level .records td:first-child {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  padding-left: 1.25rem;
 }
 
-.page-upcoming .level-container .level .records td:last-child {
-    border-top-right-radius: 0.75rem;
-    border-bottom-right-radius: 0.75rem;
-    padding-right: 1.25rem;
+.page-list .level-container .level .records td:last-child {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  padding-right: 1.25rem;
 }
 
-.page-upcoming .level-container .level .records .percent {
-    font-weight: 800;
-    color: var(--color-primary);
+.page-list .level-container .level .records .percent {
+  font-weight: 800;
+  color: var(--color-primary);
 }
 
-.page-upcoming .level-container .level .records .user {
-    width: 100%;
-    font-weight: 600;
+.page-list .level-container .level .records .user {
+  width: 100%;
+  font-weight: 600;
 }
 
-.page-upcoming .level-container .level .records .user a {
-    color: inherit;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+.page-list .level-container .level .records .user a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.page-upcoming .level-container .level .records .user a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+.page-list .level-container .level .records .user a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
-.page-upcoming .level-container .level .records .percent, 
-.page-upcoming .level-container .level .records .hz {
-    text-align: end;
+.page-list .level-container .level .records .percent,
+.page-list .level-container .level .records .hz {
+  text-align: end;
 }
 
-.page-upcoming .level-container .level .records .hz {
-    font-weight: 600;
-    opacity: 0.8;
+.page-list .level-container .level .records .hz {
+  font-weight: 600;
+  opacity: 0.8;
 }
 
-.page-upcoming .meta-container .og a:hover {
-    text-decoration: underline;
+.page-list .meta-container .og a:hover {
+  text-decoration: underline;
 }
 
-.page-upcoming .meta {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.page-list .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.page-upcoming .meta h3 {
-    font-size: 1.35rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.25rem;
+.page-list .meta h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
 }
 
-.page-upcoming .meta p {
-    line-height: 1.5;
-    opacity: 0.85;
-    font-size: 0.95rem;
+.page-list .meta p {
+  line-height: 1.6;
+  opacity: 0.9;
+  font-size: 0.98rem;
 }
 
-.page-upcoming .meta .errors {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.page-list .meta .errors {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.page-upcoming .meta .errors .error {
-    padding: 1.25rem;
-    background-color: var(--color-error);
-    color: var(--color-on-error);
-    border-radius: 0.75rem;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.page-list .meta .errors .error {
+  padding: 1.25rem;
+  background-color: var(--color-error);
+  color: var(--color-on-error);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.page-upcoming .meta .editors {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
+.page-list .meta .editors {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
-.page-upcoming .meta .editors li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 0.65rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+.page-list .meta .editors li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.page-upcoming .meta .editors li img {
-    height: 1.35rem;
-    width: 1.35rem;
-    object-fit: contain;
+.page-list .meta .editors li img {
+  height: 1.35rem;
+  width: 1.35rem;
+  object-fit: contain;
 }
 
-.page-upcoming .meta .editors li a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 600;
+.page-list .meta .editors li a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.page-upcoming .meta .editors li a:hover {
-    text-decoration: underline;
+.page-list .meta .editors li a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 1100px), (hover: none) and (pointer: coarse) {
-    .page-upcoming,
-    .page-upcoming.full-right {
-        display: block;
-        width: 100%;
-        min-width: 0;
-        min-height: 0;
-    }
+  .page-list,
+  .page-list.full-right {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+  }
 
-    .page-upcoming .list-container,
-    .page-upcoming .level-container,
-    .page-upcoming .meta-container,
-    .page-upcoming .meta-container.meta-hidden {
-        width: 100%;
-        min-width: 0;
-        max-width: none;
-        max-height: none;
-        overflow-y: visible;
-    }
+  .page-list.full-right {
+    grid-template-columns: none;
+  }
 
-    .page-upcoming .list-container,
-    .page-upcoming .level-container,
-    .page-upcoming .meta-container {
-        padding-block: 1rem;
-        padding-inline: 0.85rem;
-    }
+  .page-list .list-container,
+  .page-list .level-container,
+  .page-list .meta-container,
+  .page-list .meta-container.meta-hidden {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    max-height: none;
+    overflow-y: visible;
+  }
 
-    .page-upcoming .list-cards {
-        gap: 0.75rem;
-    }
+  .page-list .list-container,
+  .page-list .level-container,
+  .page-list .meta-container {
+    padding-block: 1rem;
+    padding-inline: 0.85rem;
+  }
 
-    .page-upcoming .level-card {
-        gap: 0.8rem;
-        padding: 0.9rem;
-        border-radius: 0.8rem;
-    }
+  .page-list .list-cards {
+    gap: 0.75rem;
+  }
 
-    .page-upcoming .card-rank {
-        min-width: 2rem;
-        font-size: 1.15rem;
-    }
+  .page-list .level-card {
+    gap: 0.8rem;
+    padding: 0.9rem;
+    border-radius: 0.8rem;
+  }
 
-    .page-upcoming .card-main-content {
-        gap: 0.8rem;
-    }
+  .page-list .card-rank {
+    min-width: 2rem;
+    font-size: 1.15rem;
+  }
 
-    .page-upcoming .card-thumbnail {
-        width: 120px;
-        height: 68px;
-    }
+  .page-list .card-main-content {
+    gap: 0.8rem;
+  }
 
-    .page-upcoming .card-info {
-        min-width: 0;
-    }
+  .page-list .card-thumbnail {
+    width: 120px;
+    height: 68px;
+  }
 
-    .page-upcoming .card-title,
-    .page-upcoming .card-author,
-    .page-upcoming .card-verifier,
-    .page-upcoming .card-points {
-        white-space: normal;
-        overflow-wrap: anywhere;
-    }
+  .page-list .card-info {
+    min-width: 0;
+  }
 
-    .page-upcoming .level-container .level {
-        width: 100%;
-        max-width: none;
-        padding-inline: 0;
-        gap: 1.25rem;
-    }
+  .page-list .card-title,
+  .page-list .card-author,
+  .page-list .card-verifier,
+  .page-list .card-points {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 
-    .page-upcoming .level h1 {
-        font-size: 2rem;
-        line-height: 1.15;
-    }
+  .page-list .level-container .level {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+    gap: 1.25rem;
+  }
 
-    .page-upcoming .level h2 {
-        font-size: 1.4rem;
-    }
+  .page-list .level h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
 
-    .page-upcoming .meta-container {
-        position: static;
-        padding-right: 0.85rem;
-    }
+  .page-list .level h2 {
+    font-size: 1.4rem;
+  }
 
-    .page-upcoming .meta-container.meta-hidden {
-        padding-inline: 0.85rem;
-    }
+  .page-list .meta-container {
+    position: static;
+    padding-right: 0.85rem;
+  }
 
-    .page-upcoming .meta-toggle,
-    .page-upcoming .meta-container.meta-hidden .meta-toggle {
-        position: static;
-        width: auto;
-        margin-bottom: 0.75rem;
-    }
+  .page-list .meta-container.meta-hidden {
+    padding-inline: 0.85rem;
+  }
 
-    .page-upcoming .meta,
-    .page-upcoming .level-info,
-    .page-upcoming .level-video,
-    .page-upcoming iframe,
-    .page-upcoming video {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
+  .page-list .meta-toggle,
+  .page-list .meta-container.meta-hidden .meta-toggle {
+    position: static;
+    width: auto;
+    margin-bottom: 0.75rem;
+  }
 
-    .page-upcoming .level-info {
-        grid-template-columns: 1fr;
-    }
+  .page-list .meta,
+  .page-list .level-info,
+  .page-list .level-video,
+  .page-list iframe,
+  .page-list video {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 
-    .page-upcoming table {
-        width: 100%;
-        max-width: 100%;
-    }
+  .page-list .level-info {
+    grid-template-columns: 1fr;
+  }
+
+  .page-list table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-list .records {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+/* Strong mobile overrides for the full-right list layout.
+   These intentionally match/exceed the desktop selectors' specificity so
+   Chrome Android (including "Desktop site") cannot keep the 3-column grid. */
+@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
+  main > .page-list.full-right {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    grid-column: 1 / -1 !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .page-list.full-right .list-container,
+  .page-list.full-right .level-container,
+  .page-list.full-right .meta-container,
+  .page-list.full-right .meta-container.meta-hidden {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .page-list.full-right .list-container {
+    max-height: 48vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .page-list.full-right .card-thumbnail {
+    width: 120px !important;
+    height: 68px !important;
+  }
+
+  .page-list.full-right .level-container .level,
+  .page-list.full-right .level-container .level .video,
+  .page-list.full-right .level-container .level iframe,
+  .page-list.full-right .level-container .level video,
+  .page-list.full-right .level-container .level .level-authors,
+  .page-list.full-right .level-container .level .stats {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-list.full-right .level-container .level .video,
+  .page-list.full-right .level-container .level iframe,
+  .page-list.full-right .level-container .level video {
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+  }
+
+  .page-list.full-right .meta-container {
+    padding: 1rem 0.85rem !important;
+  }
+
+  .page-list.full-right .meta .rules-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-list.full-right .meta .rules-panel .rules-content {
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
 }
