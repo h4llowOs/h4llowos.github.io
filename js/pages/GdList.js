@@ -41,7 +41,7 @@ export default {
                         :key="level.path || i"
                         class="level-card"
                         :class="{ active: selected == getOriginalIndex(level) }"
-                        @click="selected = getOriginalIndex(level)"
+                        @click="selectLevel(getOriginalIndex(level))"
                     >
                         <div class="card-rank">
                             #{{ getRank(level) }}
@@ -77,7 +77,6 @@ export default {
                 </p>
             </div>
 
-
             <div class="level-container">
 
                 <div class="level" v-if="level">
@@ -90,7 +89,6 @@ export default {
                         :verifier="level.verifier"
                     ></LevelAuthors>
 
-
                     <iframe
                         v-if="level.verification || level.showcase"
                         class="video"
@@ -99,7 +97,6 @@ export default {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
                     ></iframe>
-
 
                     <ul class="stats">
 
@@ -113,7 +110,6 @@ export default {
                             </p>
                         </li>
 
-
                         <li>
                             <div class="type-title-sm">
                                 Records
@@ -123,7 +119,6 @@ export default {
                                 {{ level.records.length }}
                             </p>
                         </li>
-
 
                         <li>
                             <div class="type-title-sm">
@@ -136,7 +131,6 @@ export default {
                         </li>
 
                     </ul>
-
 
                     <h2>Records</h2>
 
@@ -151,7 +145,6 @@ export default {
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
-
 
                             <td class="user">
 
@@ -170,7 +163,6 @@ export default {
 
                             </td>
 
-
                             <td class="hz">
                                 <p>{{ record.hz }}</p>
                             </td>
@@ -180,7 +172,6 @@ export default {
                     </table>
 
                 </div>
-
 
                 <div
                     class="level"
@@ -214,7 +205,6 @@ export default {
         </main>
     `,
 
-
     data: () => ({
         list: [],
         selected: 0,
@@ -232,9 +222,7 @@ export default {
             const ver = this.level.verification || "";
             const show = this.level.showcase || "";
             const chosen = ver || show || "";
-            const embedded = embed(chosen);
-            console.debug('[GdList] video selection', { verification: ver, showcase: show, chosen, embedded });
-            return embedded;
+            return embed(chosen);
         },
 
         filteredList() {
@@ -253,6 +241,31 @@ export default {
                 .map(([level]) => level);
         }
 
+        const routeLevel = this.$route.params.level;
+
+        if (routeLevel) {
+            const index = this.list.findIndex(
+                level => (level.name || '').toLowerCase() === routeLevel.toLowerCase()
+            );
+
+            if (index !== -1) {
+                this.selected = index;
+            }
+        }
+
+        if (this.list[this.selected]) {
+            const levelName = this.list[this.selected].name;
+
+            if (
+                !this.$route.params.level ||
+                this.$route.params.level.toLowerCase() !== levelName.toLowerCase()
+            ) {
+                this.$router.replace({
+                    path: `/gdlist/${encodeURIComponent(levelName.toLowerCase())}`
+                });
+            }
+        }
+
         this.loading = false;
     },
 
@@ -260,12 +273,26 @@ export default {
         getThumb(level) {
             return getThumbnailUrl(level);
         },
+
         getOriginalIndex(level) {
             return this.list.indexOf(level);
         },
+
         getRank(level) {
             const idx = this.list.indexOf(level);
             return idx >= 0 ? idx + 1 : '?';
+        },
+
+        selectLevel(index) {
+            this.selected = index;
+
+            const level = this.list[index];
+
+            if (level) {
+                this.$router.push({
+                    path: `/gdlist/${encodeURIComponent(level.name.toLowerCase())}`
+                });
+            }
         },
     },
 };
