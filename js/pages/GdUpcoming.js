@@ -244,16 +244,28 @@ export default {
         },
     },
 
+
     async mounted() {
-        const result = await fetchUpcoming();
+        try {
+            console.log("fetching upcoming...");
 
-        if (Array.isArray(result)) {
-            this.list = result
-                .filter(([level]) => level)
-                .map(([level]) => level);
-        }
+            const result = await fetchUpcoming();
 
+            console.log("fetchUpcoming result:", result);
+
+            if (Array.isArray(result)) {
+                this.list = result
+                    .filter(item => item)
+                    .map(item => Array.isArray(item) ? item[0] : item)
+                    .filter(level => level);
+            }
+        },
+    } catch (err) {
+        console.error("[GdList] Failed to load upcoming:", err);
+    } finally {
         this.loading = false;
+    }
+},
     },
 
     methods: {
