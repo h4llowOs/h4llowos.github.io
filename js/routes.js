@@ -8,15 +8,14 @@ import Changelog from './pages/Changelog.js';
 
 export default [
     { path: '/', component: Home },
-
-    // this is for the lists
+    { path: '/gdlist', component: GdList },
     { path: '/gdlist/:level', component: GdList },
+    { path: '/etohlist', component: EtohList },
     { path: '/etohlist/:level', component: EtohList },
-// lb
+    { path: '/gdleaderboard', component: GdLeaderboard },
     { path: '/gdleaderboard/:username', component: GdLeaderboard },
+    { path: '/etohleaderboard', component: EtohLeaderboard },
     { path: '/etohleaderboard/:username', component: EtohLeaderboard },
-
-    // other pages
     { path: '/gdupcoming', component: GdUpcoming },
     { path: '/changelog', component: Changelog },
 ];
