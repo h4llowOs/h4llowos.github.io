@@ -196,7 +196,12 @@ export default {
 
                             <strong>3. Level must be completed on its original copy.</strong> “Startpos” copies or “LDM” copies will be considered illegitimate and denied. External copies can easily be nerfed (even by pixels) without people noticing, external copies do not show stats on the endscreen, and oftentimes “LDM copies” nerf levels with an emphasis on decoration based difficulty by simplifying the levels' decoration.<br><br>
 
-                            <strong>4. Clicksound mods are not allowed under any circumstances.</strong> Clicksound mods such as “Click sounds full” or “ZCB Live” are not allowed, as they can be used to imitate real clicks while running a macro in the background or obscure. Use of them in a completion will be considered cheating.
+                            <strong>4. Clicksound mods are not allowed under any circumstances.</strong> Clicksound mods such as “Click sounds full” or “ZCB Live” are not allowed, as they can be used to imitate real clicks while running a macro in the background or obscure. Use of them in a completion will be considered cheating.<br><br>
+                            <hr>
+                            For a level to be added to the list, it must follow:<br>
+                            1. The level must be rated<br><br>
+                            2. The level must be verified with the rules above being followed<br><br>
+			    3. The level must be at least the hard demon difficulty                          
                         </div>
                     </div>
                 </div>
