@@ -3,11 +3,14 @@
     "area": "EToH Zone 4",
     "author": "Cll0y",
     "creators": ["Cll0y", "Crimzenith", "vendetta06", "xxDuzeRxx"],
-    "verifier": "Malikoonium",
+    "verifier": "qvizical",
     "showcase": "https://youtu.be/OUiLIxpU-nQ",
     "records": [
         {
             "user": "lilbinladn"
+        },
+        {
+            "user": "squished"
         }
     ]
 }
