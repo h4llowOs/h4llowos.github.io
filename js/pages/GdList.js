@@ -199,7 +199,7 @@ export default {
                             <strong>4. Clicksound mods are not allowed under any circumstances.</strong> Clicksound mods such as “Click sounds full” or “ZCB Live” are not allowed, as they can be used to imitate real clicks while running a macro in the background or obscure. Use of them in a completion will be considered cheating.<br><br>
                             <hr>
                             For a level to be added to the list, it must follow:<br>
-                            1. The level must be rated or be a shitty level deemed rate worthy by list editors.<br><br>
+                            1. The level must be rated or be a shitty level deemed rate worthy by list editors AND its non-shitty version is not on the gd list or upcoming list.<br><br>
                             2. The level must be verified by a nchgng player.<br><br>
 			    3. The level must be at least the hard demon difficulty (NOTE: Following October 9th, Hard demons will no longer be allowed on the list.)                          
                         </div>
