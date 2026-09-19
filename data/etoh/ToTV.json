@@ -3,11 +3,8 @@
     "area": "Starry Night",
     "author": "Lightsynth",
     "creators": ["Lightsynth", "Errlich"],
-    "verifier": "squished",
+    "verifier": "lilbinladn",
     "showcase": "https://youtu.be/hBsD0PrJ9lQ?list=PLiGCaRWmo1UArPmyY4UR8FKfMLPa39CSu",
     "records": [
-        {
-		"user": "lilbinladn"
-	    }
     ]
 }
