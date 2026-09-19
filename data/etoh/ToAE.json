@@ -3,12 +3,9 @@
     "area": "EToH Zone 8",
     "author": "Cll0y",
     "creators": ["Cll0y", "Zabregahs", "T3mpl4te"],
-    "verifier": "squished",
+    "verifier": "studio",
     "showcase": "https://youtu.be/Ap71RWJEvfc",
     "records": [
-        {
-            "user": "studio"
-        },
         {
             "user": "Malikoonium"
         },
