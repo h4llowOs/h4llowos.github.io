@@ -1,6 +1,6 @@
 const scale = 3;
 
-const LIST_SIZE = 27;
+const LIST_SIZE = 31;
 
 const MIN_FLOOR = 0.05;
 const DIFFICULTY = 2.5; 
