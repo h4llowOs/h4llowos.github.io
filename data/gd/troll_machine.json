@@ -9,5 +9,13 @@
     "showcase": "https://www.youtube.com/watch?v=ygMNaN9kGw8",
     "percentToQualify": 60,
     "password": "Free to Copy",
-    "records": []
+    "records": [
+        {
+            "user": "lilbinladn",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false,
+            "link": "https://youtu.be/jxeazaxIwoI"
+        }
+    ]
 }
