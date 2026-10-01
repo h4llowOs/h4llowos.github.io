@@ -109,7 +109,7 @@ export async function fetchEditors() {
 
 export async function fetchUpcoming() {
     try {
-        const res = await fetch(`${dir}/upcoming.json`);
+        const res = await fetch(`${dir}/_upcoming.json`);
         if (!res.ok) return null;
         const upcoming = await res.json();
         if (!Array.isArray(upcoming)) return null;
