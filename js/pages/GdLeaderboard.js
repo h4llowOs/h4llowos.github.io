@@ -198,7 +198,7 @@ export default {
                 return 'https://flagcdn.com/w160/us.png';
             }
 
-            if (n.includes('silly')) {
+            if (n.includes('myro')) {
                 return 'https://flagcdn.com/w160/de.png';
             }
 
