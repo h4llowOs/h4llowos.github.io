@@ -201,7 +201,8 @@ export default {
                             For a level to be added to the list, it must follow these rules:<br>
                             1. The level must be rated or be a shitty level deemed rate worthy by list editors AND its non-shitty version is not on the gd list or upcoming list AND the shitty level is deemed extreme demon difficulty.<br><br>
                             2. The level must be verified by a nchgng player.<br><br>
-			    3. The level must be at least the hard demon difficulty (NOTE: Following October 9th, Hard demons will no longer be allowed on the list.)                          
+			    3. The level must be at least the insane demon difficulty (NOTE: Hard demons already on the list can still get records accepted for them, you just cannot add <strong>new
+				</strong> hard demons.)                          
                         </div>
                     </div>
                 </div>
