@@ -134,7 +134,7 @@ export default {
             if (n.includes('lilbin') || n.includes('h4llow') || n.includes('malikoonium') || n.includes('goober') || n.includes('loafofbread') || n.includes('loafof') || n.includes('loaf') || n.includes('studio') || n.includes('persom') || n.includes('idioticfrogman')) {
                 return 'https://flagcdn.com/w160/us.png';
             }
-            if (n.includes('silly')) {
+            if (n.includes('myro')) {
                 return 'https://flagcdn.com/w160/de.png';
             }
             if (n.includes('burnfeh')) {
