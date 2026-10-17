@@ -7,15 +7,14 @@
     "showcase": "https://www.youtube.com/watch?v=Xzb7apPvDos",
     "percentToQualify": 52,
     "password": "Free to Copy",
-    "records": [],
-     "thumbnail": "https://i.imgur.com/WlOruT9.jpeg",
-    "tags": ["Long", "Chokepoints", "Timings", "Nerve Control", "Ship"],
-    "creators": [
-        {
+    "records": [  {
             "user": "Goober",
             "percent": 58,
             "hz": 240,
             "mobile": false,
             "link": "https://www.youtube.com/watch?v=Xzb7apPvDos"
-        }]
+        }],
+     "thumbnail": "https://i.imgur.com/WlOruT9.jpeg",
+    "tags": ["Long", "Chokepoints", "Timings", "Nerve Control", "Ship"],
+    "creators": []
 }
