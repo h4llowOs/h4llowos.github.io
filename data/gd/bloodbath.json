@@ -10,7 +10,8 @@
     "password": "Free to Copy",
     "thumbnail": "https://i.imgur.com/WlOruT9.jpeg",
     "tags": ["Long", "Chokepoints", "Timings", "Nerve Control", "Ship"],
-    "records": [  {
+    "records": [  
+        {
             "user": "Goober",
             "percent": 58,
             "hz": 240,
