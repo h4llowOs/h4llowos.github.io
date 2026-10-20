@@ -199,7 +199,7 @@ export default {
             }
 
             if (n.includes('myro')) {
-                return 'https://flagcdn.com/w160/de.png';
+                return 'https://flagcdn.com/w160/ua.png';
             }
 
             if (n.includes('burnfeh')) {
